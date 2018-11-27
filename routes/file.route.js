@@ -9,7 +9,7 @@ const router = express.Router()
 router.get('/', function(req, res, next) {
   res.render('file-upload', { title: 'Git maszynka v0.1', querybody:'Wrzuc pliczek, prosze!' });
 });
-
+ 
 /* GET list all files */
 router.get('/all', (req, res) => {
     fileController.getAll(req, res);
