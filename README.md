@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Installation
 
 Clone the repository and run `npm install`
@@ -18,6 +17,3 @@ The server will run on port 3000. You can change this by editing `config.dev.js`
 
 Set babel-node executable as the node interpreter.
 Pass node parameters of --preset=babel-preset-es2015
-=======
-# xlsx2query
->>>>>>> 0cbf2ea7765a77eea85a70cbfdfbf92b5a8f7991
