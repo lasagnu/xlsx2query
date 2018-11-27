@@ -44,5 +44,5 @@ FileModel.addFile = (fileToAdd) => {
 FileModel.removeFile = (fileName) => {
     return FileModel.remove({name: fileName});
 }
-
+ 
 export default FileModel;
