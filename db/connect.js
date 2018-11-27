@@ -4,17 +4,17 @@ import config from '../core/config/config.dev'
 
 Mongoose.Promise = global.Promise;
 
-const connectToDb = async () => {
+const connectToDatabase = async () => {
     let dbHost = config.dbHost;
     let dbPort = config.dbPort;
     let dbName = config.dbName;
     try {
         await Mongoose.connect(`mongodb://${dbHost}:${dbPort}/${dbName}`, { useMongoClient: true });
-        logger.info('Connected to mongo!!!');
+        logger.info('MongoDB: connection established');
     }
     catch (err) {
-        logger.error('Could not connect to MongoDB');
+        logger.error('MongoDB: connection failed');
     }
 }
 
-export default connectToDb;
+export default connectToDatabase;

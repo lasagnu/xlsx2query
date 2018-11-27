@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    title xlsx2query
+    link(rel='stylesheet', href='../style.css')
+    script(src='../jquery-3.3.1.min.js')
+  body
+    .dropdown
+      button.dropbtn Templates
+      .dropdown-content
+        a(class='template-git') Git Connector
+    label.inp(for='inp')
+      input#inp(type='text', placeholder=' ')
+      span.label insert into database (value, value2, value3) values (A1:B2);
+      span.border
+    #query
+    script.
+      var currenturl = jQuery(location).attr('href');
+      var regex = /[a-zA-Z]\d+\:[a-zA-Z]\d+/gm;
+      $('.template-git').on("click",function(){
+      $('#inp').val("INSERT INTO bucket (id, activity, client, name, projectconfiguration_customer_id, projectconfiguration_projectmode, projectconfiguration_projectname, projectconfiguration_sourcelanguage, projectconfiguration_targetlanguages, projectconfiguration_template_id, repositoryconfiguration_basepaths, repositoryconfiguration_extensions, repositoryconfiguration_sourcesynchroperiod, repositoryconfiguration_sourcesynchrotype,repositoryconfiguration_sourceupdatemode, repositoryconfiguration_specificoptions, repositoryconfiguration_targetsynchrotype, repositoryconfiguration_targetupdatemode, repositoryconfiguration_uploadmode, synchrodate, synchrodatemillis, projectconfiguration_connectionapi_id, sourcerepository_id,targetrepository_id) VALUES (c10:c10, 'DELETED', c11:c11, 'GIT', c12:c23, 'AUTOMATICALLY', c24:c27, 0, 0, 0, 0);");
+      $('#inp').trigger("change");
+      })
+      $("#inp").change(function(){
+      var inputContent = $("#inp").val();
+      var matchingRange = inputContent.match(regex);
+      var fetch = [];
+      var changed = inputContent;
+      for (var i = 0; i < matchingRange.length; i++) {
+      (function(i){
+      $.post("" + currenturl, { range: matchingRange[i] })
+      .done(function (resp) {
+      changed = changed.replace(matchingRange[i], resp);
+      $("#query").text(changed);
+      });
+      })(i);
+      }
+      });
