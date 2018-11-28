@@ -7,7 +7,7 @@ const router = express.Router()
 
 /* GET home page */
 router.get('/', function(req, res, next) {
-  res.render('file-upload', { title: 'Git maszynka v0.1', querybody:'Wrzuc pliczek, prosze!' });
+  res.render('file-upload', { title: 'xlsx2query'});
 });
  
 /* GET list all files */
