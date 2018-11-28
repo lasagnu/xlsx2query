@@ -1,9 +1,13 @@
-extends layout
-
-block content
-  h1= title
-  p #{querybody}
-
-  form(action='/file/upload', method='post', enctype='multipart/form-data')
-    input(type='file', name='file', placeholder='Select file')
-    button Upload
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Upload your file
+    link(rel='stylesheet', href='../upload.css')
+  body
+    form(action='/file/upload', method='POST', enctype='multipart/form-data')
+      input(type='file', name='file')
+      p #{querybody}
+      button(type='submit') Upload
+    script(src='../jquery-3.3.1.min.js')
+    script(src='../upload.js')
