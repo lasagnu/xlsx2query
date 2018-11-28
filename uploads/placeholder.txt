@@ -1,0 +1,7 @@
+Since GITHUB does not store empty folders and uploads directory needs to exist I had to create this little abomination.
+
+JavaScript was made for the masses,
+It lacked types, and modules, and classes.
+But it became quite the giant,
+Because it ran on server and client,
+Until it crashed both, despite 100 test passes.
