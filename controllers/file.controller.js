@@ -91,12 +91,12 @@ controller.uploadFile = async (req, res) => {
       res.redirect('/file/' + uploadedFileGeneratedName);
     }
     else {
-      res.render('file-upload', { title: 'Niewlasciwe rozszerzenie pliku: ' + uploadedFileExtension, querybody: 'Kpisz sobie?!' });
+      res.render('file-upload', { querybody: 'File is not valid. Try again.' });
     }
   }
   catch(err) {
       logger.error('Failed to delete file: ' + err);
-      res.render('file-upload', { title: 'Wystapil blad przy wgrywaniu pliku: ' + err, querybody: 'Sprobuj jeszcze raz' });
+      res.render('file-upload', { querybody: 'Error occured during upload. Try again.' });
   }
 }
 
