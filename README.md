@@ -32,7 +32,7 @@ localhost:3000/file
 
 ## Usage
 
-Data is being fetched by passing cells range, such as: ``A1:A2, b1:b12, a1:b12,`` in the input string. Each of the values taken from cells specified in range will be separated with , (comma) and escaped with '' (except numbers).
+Data is being fetched by passing cells range, such as: ``A1:A2, b1:b12, a1:b12`` in the input string. Each of the values taken from cells specified in range will be separated with , (comma) and escaped with '' (except numbers).
 
 Example input:
 
